@@ -30,7 +30,7 @@ img= image[200:150, 210:160]
 m,n=img.shape
 # x=np.arange(0,m)
 # y=np.arange(0,n)
-fo
+# fo
 for i in range(100):
     y = np.random.random()
     xs[0] = xs[1]

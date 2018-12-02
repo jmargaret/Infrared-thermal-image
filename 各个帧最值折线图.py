@@ -2,11 +2,15 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-
+plt.plot('real-time line chart')
+plt.xlabel('time')
+plt.ylabel('Pixel difference')
+plt.grid()
 max1=[]
 min1=[]
 t_max=[]
 t_min=[]
+plt.grid()
 for i in range(20):
     image=cv2.imread("image %d.jpg"%((i+1)*50),0)
     # src=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
@@ -21,13 +25,10 @@ print('time=',t_max)
 print('max_value=',max1)
 print('min_value=',min1)
 
-plt.plot('real-time line chart')
-plt.xlabel('time')
-plt.ylabel('Pixel difference')
+
 plt.plot(t_max,max1,'r',label='maximum')
 plt.plot(t_min,min1,'b',label='minimum')
 
 plt.legend(loc='best')
 plt.grid()
-plt.ion()
 plt.show()

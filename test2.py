@@ -1,14 +1,17 @@
-from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
-from matplotlib.ticker import LinearLocator, FormatStrFormatter
-import cv2
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 
-fig=plt.figure()
-ax=fig.gca(projection='3d')
-# ax=fig.add_subplot(111,projection='3d')
-# plt.show()
+plt.axis([0, 100, 0, 1])
+plt.ion()
 
-image = cv2.imread('image 50.jpg')
-img=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-print(img)
+xs=[0,0]
+ys=[1,1]
+
+for i in range(100):
+    y = np.random.random()
+    xs[0]=xs[1]
+    ys[0]=ys[1]
+    xs[1]=i
+    ys[1]=y
+    plt.plot(xs, ys)
+    plt.pause(0.1)

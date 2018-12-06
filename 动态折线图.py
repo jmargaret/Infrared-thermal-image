@@ -5,9 +5,12 @@ import matplotlib.pyplot as plt
 plt.axis([0,30,0,255])
 plt.ion()
 plt.grid()
+# plt.plot('real-time line chart')
+plt.xlabel('time')
+plt.ylabel('Pixel difference')
 
-
-max1=[1,1]
+max1=[0,0]
+min1=[0,0]
 t=[0,0]
 
 for i in range(30):
@@ -15,11 +18,15 @@ for i in range(30):
     # src=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
     img=image[100:150,100:150]
     max_img=img.max()
+    min_img=img.min()
     t[0]=t[1]
     max1[0]=max1[1]
+    min1[0]=min1[1]
     t[1]=i
     max1[1]=max_img
+    min1[1]=min_img
     plt.plot(t,max1)
+    plt.plot(t,min1)
     plt.pause(0.2)
 
 

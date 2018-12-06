@@ -2,7 +2,7 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import time
-plt.plot('real-time line chart')
+# plt.plot('real-time line chart')
 plt.xlabel('time')
 plt.ylabel('Pixel difference')
 plt.grid()
